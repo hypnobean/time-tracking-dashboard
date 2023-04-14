@@ -1,0 +1,242 @@
+:root {
+    /* Primary */
+    --blue: hsl(246, 80%, 60%);
+    
+    --light-red-work: hsl(15, 100%, 70%);
+    --soft-blue-play: hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green-exercise: hsl(145, 58%, 55%);
+    --violet-social: hsl(264, 64%, 52%);
+    --soft-orange-selfcare: hsl(43, 84%, 65%);
+    
+    /* Neutral */
+    
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+    box-sizing: content-box;
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    font-family: 'Rubik', sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    height: 100dvh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    width: min(990px, 95vw);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+aside {
+    grid-row: 1 / 3;
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+aside > div {
+    background-color: var(--blue);
+    padding: 2rem;
+    border-radius: 15px;
+    height: 100%;
+}
+
+aside > div > img {
+    width: 50%;
+    height: auto;
+    border-radius: 100%;
+    border: 1.5px solid white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+    margin: 1rem 0;
+    height: auto;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    color: var(--pale-blue);
+    padding: 0.75rem 0;
+}
+
+
+input[type="radio"]:checked + label {
+    color: #FFF;
+}
+
+
+h6 {
+    color: var(--pale-blue);
+    font-weight: 300;
+    margin: 1rem 0 0;
+}
+
+h5 {
+    font-weight: 300;
+    font-size: 32px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    grid-column: 1 / 2;
+    padding: 0;
+    margin: 1.5rem 0 1rem;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+svg {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+svg:hover {
+    fill: #FFF;
+}
+
+span {
+    color: var(--pale-blue);
+    font-size: 15px;
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+section > div > div:nth-child(2) {
+    background-color: var(--dark-blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 13px;
+}
+
+section {
+    min-width: 200px;
+}
+
+section > div {
+    border-radius: 15px;
+}
+
+section:nth-child(2) > div {
+    background: url('images/icon-work.svg') var(--light-red-work) no-repeat top -10px right 10px;
+
+}
+section:nth-child(3) > div {
+    background: url('images/icon-play.svg') var(--soft-blue-play) no-repeat top -10px right 10px;
+
+}
+
+section:nth-child(4) > div {
+    background: url('images/icon-study.svg') var(--light-red-study) no-repeat top -10px right 10px;
+}
+
+section:nth-child(5) > div {
+    background: url('images/icon-exercise.svg') var(--lime-green-exercise) no-repeat top 0 right 10px;
+}
+
+section:nth-child(6) > div {
+    background: url('images/icon-social.svg') var(--violet-social) no-repeat top -10px right 10px;
+}
+
+section:nth-child(7) > div {
+    background: url('images/icon-self-care.svg') var(--soft-orange-selfcare) no-repeat top -10px right 10px;
+}   
+
+section > div > div:nth-child(1) {
+    height: 50px;
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (max-width: 879px) {
+    main    {
+        align-items: normal;
+        justify-content: flex-start;
+        margin: 1rem;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    aside > div {
+        display: grid;
+        column-gap: 15px;
+        align-items: center;
+        justify-items: stretch;
+        grid-template-columns: 100px auto;
+
+    }
+
+    aside > div > h6    {
+        grid-column: 2;
+        font-size: 18px;
+    }
+
+    aside > div > h5    {
+        grid-column: 2; 
+        font-size: 25px;
+    }
+
+    aside > div > img {
+        width: 100%;
+        border: 2px solid #FFF;
+        grid-column: 1;
+        grid-row: 1 / 3;
+    }
+
+
+    form    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-left: 0;
+        margin: 1rem 0;
+        height: auto;
+    }
+
+  }
