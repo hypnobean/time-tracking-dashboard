@@ -5,6 +5,20 @@ fetch("https://hypnobean.github.io/time-tracking-dashboard/data.json")
     let timeFrame = document.querySelectorAll('input[type="radio"]:checked')[0].id.slice(6);
 
     function hours(timeFrame) {
+        switch (timeFrame) {
+            case 'daily':
+                previousText = 'Yesterday'
+                break;
+            case 'weekly':
+                previousText = 'Last Week'
+                break;
+            case 'monthly':
+                previousText = 'Last Month'
+                break;
+            default:
+                break;
+        }
+
         for (i = 0; i < data.length; i++) {
             for (i = 0; i < document.querySelectorAll('section').length; i++) {
                 showCurrentHours = data[i].timeframes[timeFrame].current
@@ -24,11 +38,10 @@ fetch("https://hypnobean.github.io/time-tracking-dashboard/data.json")
                     pHrs = 'hrs'
                 }
                 document.querySelectorAll('section')[i].children[0].children[1].children[3].innerHTML =
-                'Yesterday - ' + showPreviousHours + pHrs
+                previousText + ' - ' + showPreviousHours + pHrs
                 }
             }    
         }
-
 
     hours(timeFrame);
 
@@ -36,6 +49,7 @@ fetch("https://hypnobean.github.io/time-tracking-dashboard/data.json")
         btn.addEventListener('click', function() {
             timeFrame = btn.id.slice(6);
             hours(timeFrame);
+            console.log(timeFrame)
         });
     });
 });
